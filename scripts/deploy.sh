@@ -11,6 +11,8 @@ cd docs/.vuepress/dist
 
 git init
 git add -A
+git config user.email hitao1234@gmail.com
+git config user.name hitao123
 git commit -m 'deploy'
 
-git push -f git@github.com:<hitao123>/<hitao123>.github.io.git master
+git push -f git@github.com:hitao123/hitao123.github.io.git master
