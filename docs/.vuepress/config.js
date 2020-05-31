@@ -59,4 +59,18 @@ module.exports = {
       ['flowchart'],
       homePlugin
     ]
+    // configureWebpack: (config) => {
+    //   config.devServer = {
+    //     proxy: {
+    //       '/user': {
+    //         "target": "https://api.github.com",
+    //         "changeOrigin": true
+    //       },
+    //       '/login': {
+    //         "target": "https://api.github.com",
+    //         "changeOrigin": true
+    //       }
+    //     }
+    //   }
+    // }
 }

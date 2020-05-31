@@ -52,17 +52,7 @@
 import dayjs from 'dayjs'
 import axios from 'axios'
 
-const request = axios.create({
-  baseURL: 'https://api.github.com',
-  timeout: 4000,
-  headers: {
-    accept: 'application/json',
-    Authorization: 'token 2e670bd612e4a9250f23d7ae6124cbd0800ceec1'
-  }
-})
-
 export default {
-  // components: { QR, Bar },
     data () {
       return {
         dayjs,
@@ -77,7 +67,6 @@ export default {
           .slice(0, 10)
       },
       recentPosts () {
-        console.log(this.$site.pages, '🐱')
         return this.$site.pages
           .filter(page => page.title && page.frontmatter.date)
           .sort((x, y) => dayjs(y.frontmatter.date) - dayjs(x.frontmatter.date))
@@ -86,12 +75,30 @@ export default {
       issueData() {
         return this.data && this.data.slice(0, 10);
       }
-    },
-    created() {
-      // https://api.github.com/repos/hitao123/hitao123.github.io/issues
-      request.get('/repos/hitao123/hitao123.github.io/issues').then(res => {
-        this.data = res.data;
-      });
     }
+    // created() {
+    //   // https://api.github.com/repos/hitao123/hitao123.github.io/issues
+    //   // request.get('/repos/hitao123/hitao123.github.io/issues').then(res => {
+    //   //   this.data = res.data;
+    //   // });
+      
+      
+    //   if (this.$route.query.code) {
+    //     axios.post('https://github.com/login/oauth/access_token', {
+    //       client_id: '1f4823246b90021a07db',
+    //       client_secret: '94d8bd24cdf7d626a046464929ad90c40734df77',
+    //       code: this.$route.query.code
+    //     }, {
+    //       headers: {
+    //         accept: 'application/json'
+    //       }
+    //     }).then(res => {
+    //       console.log(res);
+    //     });
+    //   } else {
+    //       window.location = 'https://github.com/login/oauth/authorize?client_id=1f4823246b90021a07db';
+    //   }
+
+    // }
 }
 </script>
