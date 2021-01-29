@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>原生js基础知识 | Billow&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Record the life">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92b5307c.css" as="style"><link rel="preload" href="/assets/js/app.7320aa97.js" as="script"><link rel="preload" href="/assets/js/4.7c6df0b1.js" as="script"><link rel="preload" href="/assets/js/3.add0e5d8.js" as="script"><link rel="preload" href="/assets/js/21.701be381.js" as="script"><link rel="prefetch" href="/assets/js/10.490f3c5b.js"><link rel="prefetch" href="/assets/js/11.b21e81cb.js"><link rel="prefetch" href="/assets/js/12.d32284c8.js"><link rel="prefetch" href="/assets/js/13.d5ea00fb.js"><link rel="prefetch" href="/assets/js/14.85e2495e.js"><link rel="prefetch" href="/assets/js/15.2ef10be4.js"><link rel="prefetch" href="/assets/js/16.5bda7a13.js"><link rel="prefetch" href="/assets/js/17.68f50058.js"><link rel="prefetch" href="/assets/js/18.f543fdac.js"><link rel="prefetch" href="/assets/js/19.ef4a9284.js"><link rel="prefetch" href="/assets/js/20.b03079ad.js"><link rel="prefetch" href="/assets/js/22.b2e073a2.js"><link rel="prefetch" href="/assets/js/23.803d6ea0.js"><link rel="prefetch" href="/assets/js/24.5ecaf349.js"><link rel="prefetch" href="/assets/js/25.8ae54d01.js"><link rel="prefetch" href="/assets/js/26.00aa3062.js"><link rel="prefetch" href="/assets/js/27.1070e25e.js"><link rel="prefetch" href="/assets/js/28.96d8d4d2.js"><link rel="prefetch" href="/assets/js/29.8141eba8.js"><link rel="prefetch" href="/assets/js/30.96db1157.js"><link rel="prefetch" href="/assets/js/31.f71b229b.js"><link rel="prefetch" href="/assets/js/32.252c1966.js"><link rel="prefetch" href="/assets/js/33.620d20bf.js"><link rel="prefetch" href="/assets/js/34.62369e2b.js"><link rel="prefetch" href="/assets/js/35.158f1e63.js"><link rel="prefetch" href="/assets/js/5.8ff830e7.js"><link rel="prefetch" href="/assets/js/6.59e941bb.js"><link rel="prefetch" href="/assets/js/7.07a213a7.js"><link rel="prefetch" href="/assets/js/8.8cfc374a.js"><link rel="prefetch" href="/assets/js/9.5a91c792.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.30bdab9c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92b5307c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Billow's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="对象"><a href="#对象" class="header-anchor">#</a> 对象</h3> <h4 id="工厂模式"><a href="#工厂模式" class="header-anchor">#</a> 工厂模式</h4> <div class="language-创建对象模式 extra-class"><pre class="language-text"><code>    function createPerson(name,age,job){
+    var o = new Object ();
+    o.name = name;
+    o.age  = age;
+    o.job  = job;
+    o.sayName = function () {
+    alert(this.name);
+    }
+    return o; 
+    }
+
+    var person1 =  createPerson(&quot;jack&quot;, 20,&quot;student&quot;);
+    var person2 =  createPerson(&quot;john&quot;, 21,&quot;teacher&quot;);
+    person1.sayName();      //jack
+    person2.sayName();      //john
+    alert(typeof person1);  //function Object() { [native code] }
+    alert(person2.constructor); //undefined
+   工厂模式问题，没有解决对象识别问题，（即怎样知道一个对象的类型)
+</code></pre></div> <h4 id="构造函数模式"><a href="#构造函数模式" class="header-anchor">#</a> 构造函数模式</h4> <div class="language- extra-class"><pre class="language-text"><code>    function Person(name,age,job){
+        this.name = name;
+        this.age  = age;
+        this.job  = job;
+        this.sayName = function () {
+            alert(this.name);
+        } 
+    }
+
+    var person1 =  new Person(&quot;jack&quot;, 20,&quot;student&quot;);
+    var person2 =  new Person(&quot;john&quot;, 21,&quot;teacher&quot;);
+    person1.sayName();      //jack
+    person2.sayName();      //john
+    console.log(typeof person1);  //object
+    console.log(typeof person2); //object
+    console.log(person1.sayName == person1.sayName) //true
+    构造函数模式和工厂模式相比较，优点就是将实例标示为一种特定的类型(object)，构造函数的问题就是每个方法都在每一个实例上重新定义一次
+</code></pre></div><h4 id="原型模式"><a href="#原型模式" class="header-anchor">#</a> 原型模式</h4> <div class="language- extra-class"><pre class="language-text"><code>    function Person(){
+    }
+
+    Person.prototype.name = &quot;Jack&quot;;
+    Person.prototype.age = 21;
+    Person.prototype.job = &quot;teacher&quot;;
+    Person.prototype.sayName = function(){
+        console.log(this.name);
+    };
+    var person1 = new Person();
+    var person2 = new Person();
+    person1.sayName(); //Jack
+    person2.sayName(); //Jack
+    console.log(person1.sayName == person1.sayName); //true
+    //原型对象的问题，由其共享本质所导致的
+</code></pre></div><blockquote><ol><li>原型是一个需要被重点理解的点，每一个函数可以被看成一个对象，它有一个<code>prototype</code> 属性，指向函数的原型对象，在默认情况下，所有原型对象会获得一个<code>constructor</code>属性指向<code>prototype</code>所在那个函数，而对于每一个实例，则有一个<code>_proto_</code>属性，指向函数原型对象要明确一点，这个连接**<code>存在于实例和构造函数的原型对象</code>**之间，<em>而不是存在于实例与构造函数之间</em>。
+<img src="http://omla9ld8j.bkt.clouddn.com/$1JL%7B2%28YM5SS%5B0P5IU%25$Q%5DW.png" alt="原型链图解"></li></ol></blockquote> <ol start="2"><li>当为对象实例添加一个同名属性时，则会屏蔽原型链上的属性或方法</li> <li><code>getOwnPropertyNames(Object)</code>和<code>Object.keys(Object)</code></li></ol> <div class="language- extra-class"><pre class="language-text"><code>    function Person() {}
+    Person.prototype.sayHi = function() {};
+    Person.prototype.weight = 120;
+    var p1 = new Person();
+    p1.name = &quot;jack&quot;;
+    p1.age = 12;
+    Object.keys(p1); //[&quot;name&quot;,&quot;age&quot;]; 所有可枚举
+    Object.getOwnPropertyNames(Person.prototype); //[&quot;constructor&quot;,sayHi&quot;,&quot;sayHi&quot;] 所有属性(包括函数名)
+
+    //更简单的原型语法
+    function Person() {
+    }
+    Person.prototype = {
+        name : &quot;Jack&quot;,
+        age  : 21,
+        job  : &quot;teacher&quot;,
+        sayName : function () {
+        }
+    }; //对象字面量写法
+    写法确实简洁，方便，但是使用对象字面量创建的原型方法，会改写原来的指针， 具体来说， 原来`constructor`指向`prototype`所在的函数，但是现在重写之后，指向`Object`
+</code></pre></div><h4 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="header-anchor">#</a> 组合使用构造函数模式和原型模式</h4> <div class="language- extra-class"><pre class="language-text"><code>    function Person(name,age,job) {
+        this.name = name;
+        this.age  = age;
+        this.job  = job;
+        this.friends = [&quot;tom&quot;,&quot;alice&quot;];
+    }
+    Person.prototype = {
+        constructor : Person,
+        sayName : function () {
+            alert(this.name);
+        }
+    }; //对象字面量写法
+    var person1 = new Person(&quot;jack&quot;, 20,&quot;student&quot;);
+    var person2 = new Person(&quot;john&quot;, 21,&quot;teacher&quot;);
+    person1.friends.push(&quot;bob&quot;);
+    alert(person1.friends);
+    alert(person2.friends);
+    alert(person1.friends === person2.friends);
+    alert(person1.sayName === person2.sayName);
+</code></pre></div><h4 id="寄生构造函数模式"><a href="#寄生构造函数模式" class="header-anchor">#</a> 寄生构造函数模式</h4> <div class="language- extra-class"><pre class="language-text"><code>    function Person(name,age,job){
+        var o = new Object ();
+        o.name = name;
+        o.age  = age;
+        o.job  = job;
+        o.sayName = function () {
+            alert(this.name);
+        }
+        return o; 
+     }
+    var person1 =  new Person(&quot;jack&quot;, 20,&quot;student&quot;);
+    var person2 =  new Person(&quot;john&quot;, 21,&quot;teacher&quot;);
+    person1.sayName();      //jack
+    person2.sayName();      //john
+    alert(typeof person1);  //object
+    alert(typeof person2); //object
+    alert(person1 instanceof Person);  //false true
+    alert(person2 instanceof Person); //false  true    
+    跟工厂模式没什么区别，这里只是用 new 来创建对象，而之前就是通过函数返回对象来调用方法
+</code></pre></div><h3 id="继承"><a href="#继承" class="header-anchor">#</a> 继承</h3> <h4 id="原型链实现继承"><a href="#原型链实现继承" class="header-anchor">#</a> 原型链实现继承</h4> <div class="language- extra-class"><pre class="language-text"><code>    function SuperType() {
+      this.property = true;
+    }
+    SuperType.prototype.getSuperValue = function (){
+        return this.property;
+    }
+    function SubType() {
+        this.subProperty= false;
+    }
+    SubType.prototype = new SuperType();
+    SubType.prototype.getSubValue = function(){
+    return this.subProperty;
+    }
+    var instance = new SubType();
+    alert(instance.getSuperValue());
+    alert(instance.getSubValue());
+</code></pre></div><h4 id="借用构造函数"><a href="#借用构造函数" class="header-anchor">#</a> 借用构造函数</h4> <div class="language- extra-class"><pre class="language-text"><code>    function SuperType() {
+        this.colors=[&quot;blue&quot;,&quot;black&quot;,&quot;white&quot;];
+    }
+
+    function SubType () {
+        SuperType.call(this);
+    }
+
+    var instance1 = new SubType();
+    instance1.colors.push(&quot;grenn&quot;);
+    alert(instance1.colors);
+
+    var instance2 = new SubType();
+    alert(instance2.colors);
+</code></pre></div><h4 id="组合继承"><a href="#组合继承" class="header-anchor">#</a> 组合继承</h4> <div class="language- extra-class"><pre class="language-text"><code>    function SuperType(name) {
+        this.name = name; //父类属性，子类都有副本
+        this.colors = [&quot;red&quot;,&quot;blue&quot;,&quot;green&quot;];
+    }
+
+    SuperType.prototype.sayName = function () {
+        alert(this.name); //父类原型方法
+    };
+
+    function SubType(name,age){
+        SuperType.call(this,name); //调用父类构造函数
+        this.age = age;
+        console.log(this);
+    }
+    SubType.prototype = new SuperType();
+    SubType.prototype.constructor = SubType();
+    SubType.prototype.sayAge = function () {
+    alert(this.age);
+    }
+    var instance1 = new SubType(&quot;Jack&quot;,26);
+    instance1.colors.push(&quot;white&quot;);
+    alert(instance1.colors);
+    instance1.sayName();
+    instance1.sayAge();
+
+    var instance2 = new SubType(&quot;Bob&quot;, 45);
+    alert(instance1.colors);
+    instance1.sayName();
+    instance1.sayAge();
+</code></pre></div><h4 id="原型式继承"><a href="#原型式继承" class="header-anchor">#</a> 原型式继承</h4> <div class="language- extra-class"><pre class="language-text"><code>    function object(o) {
+        function F() {}
+        F.prototype = o;
+        return new F();
+    }
+</code></pre></div><h3 id="prototype和-proto-的区别"><a href="#prototype和-proto-的区别" class="header-anchor">#</a> <code>prototype和_proto_的区别</code></h3> <div class="language- extra-class"><pre class="language-text"><code>    function Point(x, y) {
+      this.x = x;
+      this.y = y;
+    }
+    var myPoint = new Point();
+    // the following are all true
+    myPoint.__proto__ == Point.prototype
+    myPoint.__proto__.__proto__ == Object.prototype
+    myPoint instanceof Point;
+    myPoint instanceof Object;
+
+    `_proto_`在每一个对象或者对象的原型上都存在，而`prototype`只存在于构造函数中，或者说函数中，`_proto_`都是指向他们的**“构造函数的原型”**比如上面的 `myPoint.__proto__ == Point.prototype` 和 `myPoint.__proto__.__proto__ == Object.prototype` 以及`myPoint._proto_ = Function.prototype`
+
+</code></pre></div><h3 id="js中的this和apply、call"><a href="#js中的this和apply、call" class="header-anchor">#</a> <code>js中的this和apply、call</code></h3> <blockquote><p>在平常的学习过程中，对js中的this和apply、call认识比较模糊，通过查阅一些资料来加强认识。
+<code>js 中 this 和 apply、call的理解，平常我们对this在一些面向对象的语言中，都有一些认识，在Java语言里一般会在构造函数里边使用</code></p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    public class Person {
+        private String name;
+        private String sex;
+        private int age;
+        public Person(String name,String sex,int age){
+            this.name = name;
+            this.sex  = sex;
+            this.age  = age;
+        }
+    .........
+    }
+</code></pre></div><blockquote><p>在js里面this 和 面向对象的 this 还是有一些差别，重点在于js里的this指针受到的影响较大，具体来说就是三个方面，<strong>在全局环境中，this指向window全局变量，这里window对象其实也是系统实例化的一个对象，只是不需要我们手动去new，javascript里call和apply操作符可以随意改变this指向，这看起来很灵活，但是这种不合常理的做法破坏了我们理解this指针的本意，同时也让写代码时候很难理解this的真正指向，javascript里的函数是一个高阶函数，编程语言里的高阶函数是可以作为对象传递的，同时javascript里的函数还有可以作为构造函数，这个构造函数可以创建实例化对象，结果导致方法执行时候this指针的指向会不断发生变化，很难控制</strong>而且js不是纯面向对象的语言，毕竟还是解释性语言，我们可以借助面向对象语言的认识来理解，但是javascript里的this在没有进行new操作也会生效，这时候this往往会指向全局对象window。</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    var name = &quot;huahaitao&quot;;
+    console.log(name); //huahaitao
+    console.log(this.name); //huahaitao
+    console.log(this); //huahaitao
+</code></pre></div><blockquote><p>在js里面对象字面量的写法和 new Object()一样，会改变this 的指向,这里要说明一点，在一般情况下，谁被 new，this就指向它。在js高程里面有如下定义，new操作符会让构造函数产生如下变化：</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    1. 创建一个新对象；
+    2. 将构造函数的作用域赋给新对象（因此this就指向了这个新对象）；
+    3. 执行构造函数中的代码（为这个新对象添加属性）；
+    4. 返回新对象
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var obj = {
+        name : &quot;huahaitao&quot;,
+        sex  : &quot;male&quot;,
+        age  : 22,
+        show: function(){
+            console.log(this.name+&quot;  &quot;+this.sex+&quot;   &quot;+this.age);
+            console.log(this);
+        }
+    };
+    var Otherobj = new Object();
+    Otherobj.name = &quot;huahaitao&quot;;
+    Otherobj.sex  = &quot;male&quot;;
+    Otherobj.age  = 22;
+    Otherobj.show = function(){
+            console.log(this.name+&quot;  &quot;+this.sex+&quot;   &quot;+this.age);
+            console.log(this);
+    };
+    obj.show(); //huahaitao male 22    Object()
+    Otherobj.show(); //huahaitao male 22    Object()
+</code></pre></div><blockquote><p>js 里面的apply和call是如何改变this的，还有一点就是apply和call传入参数的不同，apply() 方法在指定 this 值和参数（参数以数组或类数组对象的形式存在）的情况下调用某个函数，即fun.call(this,[arg1,arg2])，call()方法call() 方法在指定 this 值和参数（参数以参数列表的形式存在）的情况下调用某个函数，即fun.call(this,arg1,arg2).</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    var name = &quot;huahaitao&quot;;
+    function test(name){
+        console.log(name);
+        console.log(this.name);
+        console.log(this);
+    }
+    var obj = {
+        name: &quot;Alice&quot;
+    }
+    test(); // undefined huahaitao window
+    test.call(obj,&quot;Bob&quot;); // Bob Alice Object 这里this指向改变了
+    test.apply(obj,[&quot;Alex&quot;]); //Alex Alice Object 这里this指向改变了
+
+</code></pre></div><blockquote><p>字面表示法在简单的表示里我们很容易知道this指向对象本身，但是这个对象会有方法，方法的参数可能会是函数，而这个函数的定义里也可能会使用this指针，如果传入的函数没有被实例化过和被实例化过，this的指向是不同，有时我们还想在传入函数里通过this指向外部函数或者指向被定义对象本身，这些乱七八糟的情况使用交织在一起导致this变得很复杂，结果就变得糊里糊涂。</p></blockquote> <div class="language- extra-class"><pre><code>1. 传入的参数是函数的别名，那么函数的this就是指向window；
+2. 传入的参数是被new过的构造函数，那么this就是指向实例化的对象本身；
+3. 如果我们想把被传入的函数对象里this的指针指向外部字面量定义的对象，那么我们就是用apply和call
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    var name = &quot;I am window&quot;;
+    var obj = {
+        name : &quot;huahaitao&quot;,
+        fun1 : function(obj){  //传入参数是被new 过的构造函数
+            obj.show();
+        },
+        fun2 : function(fun){    //传入参数是函数的别名
+            fun();
+        },
+        fun3 : function(fun){   //使用call
+            fun.call(this,&quot;test&quot;);
+        }
+    }
+
+    function Person(name){
+        this.name = name;
+        this.show = function(){
+            console.log(name);
+            console.log(this.name);
+            console.log(this);
+        }
+    }
+    function test(){
+        console.log(name);
+        console.log(this.name);
+        console.log(this);
+    }
+    function test1(name){
+        console.log(name);
+        console.log(this.name);
+        console.log(this);
+    }
+    var p = new Person(&quot;Alice&quot;);
+    obj.fun1(p); //Alice Alice Object
+    obj.fun2(test); //I am window  I am window  window
+    obj.fun3(test1); //test huahaitao object
+</code></pre></div><h3 id="json语法-解析json-序列化json"><a href="#json语法-解析json-序列化json" class="header-anchor">#</a> <code>JSON语法，解析JSON，序列化JSON</code></h3> <div class="language- extra-class"><pre class="language-text"><code>    1. JSON的语法可以表示以下三种类型的值，**常量 对象 数组**，不支持变量，函数或对象实例.
+    2. 与JavaScript对象字面量相比，JSON对象有两个地方不一样，没有声明变量和末尾的分号，对象的属性必须加上双引号.
+    3. 解析和序列化方法，`stringify()和 parse()`.
+    //函数的参数，第一个是传进去的对象，第二个是过滤器，可以是数组或者函数，第三个是格式，
+    //可以是字符串或者数字，为了json数据格式更好地展示
+    stringify(obj,[],[string | number]) 
+    var obj = {
+    &quot;name&quot; : &quot;hht&quot;,
+    &quot;age&quot;  : 12,
+    &quot;sex&quot;  : &quot;male&quot;
+    }   
+    var json = JSON.stringify(obj,[&quot;name&quot;],5);
+    console.log(json);
+    /*{
+           &quot;name&quot;: &quot;hht&quot;
+    }*/
+    var test = JSON.parse(json);  
+    console.log(test); //Object {name: &quot;hht&quot;}   __proto__ : Object
+    
+    //使用函数过滤
+    var json = JSON.stringify(obj,function(key,value){
+    switch(key){
+    case &quot;name&quot; : return null;
+    case &quot;age&quot;  : return value*3;
+    case &quot;sex&quot;  : return undefined
+    default :
+    return value;
+    }
+    });
+    console.log(json); // {&quot;name&quot;:null,&quot;age&quot;:36}
+    var test = JSON.parse(json);  
+    console.log(test); //Object {name:null, age:36}   __proto__ : Object
+    
+    //parse()
+    var obj = JSON.parse(json,function(key,value){});
+</code></pre></div><h3 id="原型继承的几种写法比较"><a href="#原型继承的几种写法比较" class="header-anchor">#</a> <code>原型继承的几种写法比较</code></h3> <div class="language- extra-class"><pre class="language-text"><code>//方式一    对象字面量的方式改变了 constructor的指向 ，指向object ，相当于 new object()  
+   var Calculator1 = function (decimalDigits, tax) {
+        this.decimalDigits = decimalDigits;
+        this.tax = tax;
+    };
+    Calculator1.prototype = {
+        add: function (x, y) {
+        return x + y;
+        },
+        subtract: function (x, y) {
+            return x - y;
+        }
+    };
+    console.log(Calculator1 instanceof Object);
+    var cal = new Calculator1();
+    console.log(cal.constructor, cal._proto_);
+    console.log(Calculator1.prototype.constructor);
+    console.log((new Calculator1()).add(1, 3));
+    
+    //方式二    这种方式有助于封装函数
+    Calculator2.prototype = function () {
+            add = function (x, y) {
+                return x + y;
+            },
+
+            subtract = function (x, y) {
+                return x - y;
+            }
+            return {
+                add: add,
+                subtract: subtract
+            }
+        } ();
+
+       
+    //方式三    一条一条的添加，不推荐这种写法
+    var Calculator3 = function (decimalDigits, tax) {
+    this.decimalDigits = decimalDigits;
+    this.tax = tax;
+    };
+    Calculator.prototype.add = function (x, y) {
+        return x + y;
+    };
+
+    Calculator.prototype.subtract = function (x, y) {
+        return x - y;
+    };
+</code></pre></div><h3 id="bind方法"><a href="#bind方法" class="header-anchor">#</a> <code>bind方法</code></h3> <blockquote><p>参考 <a href="https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/" target="_blank" rel="noopener noreferrer">bind<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>var myObj = {
+    specialFunction: function () {
+    },
+    anotherSpecialFunction: function () {
+    },
+    getAsyncData: function (cb) {
+        cb();
+    },
+    render: function () {
+        var that = this;
+        this.getAsyncData(function () {
+            that.specialFunction();
+            that.anotherSpecialFunction();
+        });
+    }
+};
+myObj.render();
+//Uncaught TypeError: Object [object global] has no method 'specialFunction
+改写一下
+render: function () {
+    this.getAsyncData(function () {
+        this.specialFunction();
+        this.anotherSpecialFunction();
+    }.bind(this));
+    
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/29/2021, 7:43:54 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7320aa97.js" defer></script><script src="/assets/js/4.7c6df0b1.js" defer></script><script src="/assets/js/3.add0e5d8.js" defer></script><script src="/assets/js/21.701be381.js" defer></script>
+  </body>
+</html>

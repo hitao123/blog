@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Redux 入门 | Billow&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Record the life">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92b5307c.css" as="style"><link rel="preload" href="/assets/js/app.7320aa97.js" as="script"><link rel="preload" href="/assets/js/4.7c6df0b1.js" as="script"><link rel="preload" href="/assets/js/3.add0e5d8.js" as="script"><link rel="preload" href="/assets/js/25.8ae54d01.js" as="script"><link rel="prefetch" href="/assets/js/10.490f3c5b.js"><link rel="prefetch" href="/assets/js/11.b21e81cb.js"><link rel="prefetch" href="/assets/js/12.d32284c8.js"><link rel="prefetch" href="/assets/js/13.d5ea00fb.js"><link rel="prefetch" href="/assets/js/14.85e2495e.js"><link rel="prefetch" href="/assets/js/15.2ef10be4.js"><link rel="prefetch" href="/assets/js/16.5bda7a13.js"><link rel="prefetch" href="/assets/js/17.68f50058.js"><link rel="prefetch" href="/assets/js/18.f543fdac.js"><link rel="prefetch" href="/assets/js/19.ef4a9284.js"><link rel="prefetch" href="/assets/js/20.b03079ad.js"><link rel="prefetch" href="/assets/js/21.701be381.js"><link rel="prefetch" href="/assets/js/22.b2e073a2.js"><link rel="prefetch" href="/assets/js/23.803d6ea0.js"><link rel="prefetch" href="/assets/js/24.5ecaf349.js"><link rel="prefetch" href="/assets/js/26.00aa3062.js"><link rel="prefetch" href="/assets/js/27.1070e25e.js"><link rel="prefetch" href="/assets/js/28.96d8d4d2.js"><link rel="prefetch" href="/assets/js/29.8141eba8.js"><link rel="prefetch" href="/assets/js/30.96db1157.js"><link rel="prefetch" href="/assets/js/31.f71b229b.js"><link rel="prefetch" href="/assets/js/32.252c1966.js"><link rel="prefetch" href="/assets/js/33.620d20bf.js"><link rel="prefetch" href="/assets/js/34.62369e2b.js"><link rel="prefetch" href="/assets/js/35.158f1e63.js"><link rel="prefetch" href="/assets/js/5.8ff830e7.js"><link rel="prefetch" href="/assets/js/6.59e941bb.js"><link rel="prefetch" href="/assets/js/7.07a213a7.js"><link rel="prefetch" href="/assets/js/8.8cfc374a.js"><link rel="prefetch" href="/assets/js/9.5a91c792.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.30bdab9c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92b5307c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Billow's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>很早就听说过<code>Redux,React</code>,一直没有时间去学习一下，趁现在空闲的时间里，自己研究一下。<strong><code>Redux</code> 和 <code>React</code> 之间没有关系。<code>Redux</code>支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。</strong></p></blockquote> <h3 id="action"><a href="#action" class="header-anchor">#</a> Action</h3> <blockquote><p>Action是将数据从应用传到Store的有效载体，是Store数据的唯一来源，
+一般会通过 Store.dispatch() 将action 传到 Store。</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>action 定义 除了type字段，其他字段可以自定义，action 实质上就是一个对象
+    const ADD_TODO = 'Add_todo'
+    {
+    type: ADD_TODO
+    text: 'my first redux app'
+    }
+</code></pre></div><blockquote><p>Action 创建函数(简单返回一个action)</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    function addTodo(text) {
+      return {
+        type: ADD_TODO,
+        text
+      }
+    }
+    - Redux 中只需把 action 创建函数的结果传给 dispatch() 方法即可发起一次 dispatch 过程
+    dispatch(addTodo(text))
+    - 或者创建一个 被绑定的 action 创建函数 来自动 dispatch：
+    const boundAddTodo = (text) =&gt; dispatch(addTodo(text))
+    boundAddTodo(text);
+    - 项目里面大部分是通过react-redux 提供的 connect() 帮助器来调用dispatch。
+</code></pre></div> <h3 id="reducer"><a href="#reducer" class="header-anchor">#</a> Reducer</h3> <blockquote><p><code>Action</code> 只是描述了有事情发生了这一事实，并没有指明应用如何更新 <code>state</code>。而这正是<code>reducer</code>要做的事情.<code>reducer</code> 就是一个纯函数，接收旧的 state 和<code>action</code>，返回新的 state。(纯函数可以简单的理解为，相同的输入一定有相同的输出)</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>(previousState, action) =&gt; newState
+
+1. 不要在Reducer 里做以下三件事    
+    - 修改传入参数；
+    - 执行有副作用的操作，如 API 请求和路由跳转；
+    - 调用非纯函数，如 Date.now() 或 Math.random()。
+
+2. Redux 首次执行时，state 为 undefined，可以利用ES6 默认值
+
+    function todoApp(state = initialState, action) {
+      // 这里暂不处理任何 action，
+      // 仅返回传入的 state。
+      return state
+    }
+
+    //reducer
+
+    function todoApp(state = initialState, action) {
+      switch (action.type) {
+        case SET_VISIBILITY_FILTER:
+          return Object.assign({}, state, {
+            visibilityFilter: action.filter
+          })
+        default:
+          return state
+      }
+    }
+    //使用tips: 不要修改 state。 使用 Object.assign() 新建了一个副本。不能这样使用 Object.assign(state, { visibilityFilter: action.filter })
+
+3. Redux 提供了 combineReducers() 工具类
+    import { combineReducers } from 'redux';
+
+    const todoApp = combineReducers({
+      visibilityFilter,
+      todos
+    })
+
+    export default todoApp;
+    ==================
+    等价于下面这种写法
+    ==================
+    export default function todoApp(state = {}, action) {
+      return {
+        visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+        todos: todos(state.todos, action)
+      }
+    }
+
+</code></pre></div><h3 id="store"><a href="#store" class="header-anchor">#</a> Store</h3> <blockquote><p>Store 有以下职责：</p></blockquote> <ul><li>维持应用的 state；</li> <li>提供 getState() 方法获取 state；</li> <li>提供 dispatch(action) 方法更新 state；</li> <li>通过 subscribe(listener) 注册监听器;</li> <li>通过 subscribe(listener) 返回的函数注销监听器。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    import { createStore } from 'redux'
+    let store = createStore(todoApp)
+    //createStore() 的第二个参数是可选的, 用于设置 state 初始状态。
+</code></pre></div><h3 id="react-redux-绑定库带来的变化"><a href="#react-redux-绑定库带来的变化" class="header-anchor">#</a> react-redux 绑定库带来的变化</h3> <h4 id="容器组件-container-components"><a href="#容器组件-container-components" class="header-anchor">#</a> 容器组件（Container Components）</h4> <h4 id="展示组件-presentational-components"><a href="#展示组件-presentational-components" class="header-anchor">#</a> 展示组件（Presentational Components）</h4> <table><thead><tr><th style="text-align:center;">-</th> <th style="text-align:center;">展示组件</th> <th style="text-align:center;">容器组件</th></tr></thead> <tbody><tr><td style="text-align:center;">作用</td> <td style="text-align:center;">描述如何展现（骨架、样式）</td> <td style="text-align:center;">描述如何运行（数据获取、状态更新）</td></tr> <tr><td style="text-align:center;">直接使用Redux</td> <td style="text-align:center;">否</td> <td style="text-align:center;">是</td></tr> <tr><td style="text-align:center;">数据来源</td> <td style="text-align:center;">props</td> <td style="text-align:center;">监听 Redux state</td></tr> <tr><td style="text-align:center;">数据修改</td> <td style="text-align:center;">从 props 调用回调函数</td> <td style="text-align:center;">向 Redux 派发 actions</td></tr> <tr><td style="text-align:center;">调用方式</td> <td style="text-align:center;">手动</td> <td style="text-align:center;">通常由 React Redux 生成</td></tr></tbody></table> <blockquote><p>大部分的组件都应该是展示型的，但一般需要少数的几个容器组件把它们和 Redux store 连接起来。</p></blockquote> <h4 id="与使用react-redux之后相比较变化点"><a href="#与使用react-redux之后相比较变化点" class="header-anchor">#</a> 与使用<code>react-redux</code>之后相比较变化点</h4> <div class="language- extra-class"><pre class="language-text"><code>====================
+//使用react-redux之前  需要 store.subscribe()
+====================
+const store = createStore(counter);
+const rootEl = document.getElementById('root');
+const render = () =&gt; ReactDOM.render(
+        &lt;Counter 
+            value={store.getState()}
+            onIncrement={() =&gt; store.dispatch({type: 'INCREMENT'})}
+            onDecrement={() =&gt; store.dispatch({type: 'DECREMENT'})}
+        /&gt;,
+        rootEl
+    );
+render();
+store.subscribe(render);
+====================
+//使用react-redux之后 全局store 
+====================
+const store = createStore(reducer)
+render(
+  &lt;Provider store={store}&gt;
+    &lt;App /&gt;
+  &lt;/Provider&gt;,
+  document.getElementById('root')
+)
+//action   components containers reducers 分层
+
+const mapStateToProps = (state, ownProps) =&gt; ({
+  active: ownProps.filter === state.visibilityFilter
+})
+const mapDispatchToProps = (dispatch, ownProps) =&gt; ({
+  onClick: () =&gt; {
+    dispatch(setVisibilityFilter(ownProps.filter))
+  }
+})
+const FilterLink = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Link)
+export default FilterLink
+
+=======
+reducers
+=======
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
+})
+export default todoApp
+</code></pre></div><h3 id="状态改变过程梳理-demo3"><a href="#状态改变过程梳理-demo3" class="header-anchor">#</a> 状态改变过程梳理(demo3)</h3> <blockquote><p>输入点击添加按钮    dispatch(addTodo(input.value))</p></blockquote> <h4 id="action-2"><a href="#action-2" class="header-anchor">#</a> action</h4> <div class="language- extra-class"><pre class="language-text"><code>{
+    type: 'ADD_TODO',
+    id: 1,                  =========&gt;action
+    text: 1321
+}
+</code></pre></div><h4 id="reducers"><a href="#reducers" class="header-anchor">#</a> reducers</h4> <div class="language- extra-class"><pre class="language-text"><code>[{
+    id: 1,
+    text: 1321,   ========&gt;state 
+    completed: false
+}]
+store.subscribe() UI 更新
+todolist 状态发生改变
+
+todo 数组参数传递 
+onTodoClick 函数传递  toggletodo
+
+todolist 开始渲染
+刚开始都是 仅仅只有All 为链接，其他为未激活状态，点击之后可以设置自己的状态
+</code></pre></div><h3 id="异步回调"><a href="#异步回调" class="header-anchor">#</a> 异步回调</h3> <h4 id="createstore"><a href="#createstore" class="header-anchor">#</a> createStore</h4> <div class="language-//const store = createStore(reducer,applyMiddleware(...middleware)) extra-class"><pre class="language-text"><code>
+    function createStore(reducer, preloadedState, enhancer) {
+      var _ref2;
+    //出错处理，可以学习，代码健壮性
+      if (typeof preloadedState === 'function' &amp;&amp; typeof enhancer === 'undefined') {
+        enhancer = preloadedState; //传入两个值的时候，会将 preloadedState 赋值给 enhancer ，而且enhancer 只能是applyMiddleware方法
+        preloadedState = undefined;
+      }
+      if (typeof enhancer !== 'undefined') {
+        if (typeof enhancer !== 'function') {
+          throw new Error('Expected the enhancer to be a function.');
+        }
+        return enhancer(createStore)(reducer, preloadedState); //这里将createStore 传进去
+      }
+      if (typeof reducer !== 'function') {
+        throw new Error('Expected the reducer to be a function.');
+      }
+      //全局变量
+      var currentReducer = reducer;
+      var currentState = preloadedState;
+      var currentListeners = [];
+      var nextListeners = currentListeners;
+      var isDispatching = false;
+
+      function getState() {
+        return currentState;
+      }
+
+      function subscribe(listener) {
+        if (typeof listener !== 'function') {
+          throw new Error('Expected listener to be a function.');
+        }
+        var isSubscribed = true;
+        ensureCanMutateNextListeners();
+        nextListeners.push(listener);
+        return function unsubscribe() {
+          if (!isSubscribed) {
+            return;
+          }
+          isSubscribed = false;
+
+          ensureCanMutateNextListeners();
+          var index = nextListeners.indexOf(listener);
+          nextListeners.splice(index, 1);
+        };
+      }
+
+      function dispatch(action) {
+        if (!(0, _isPlainObject2['default'])(action)) {
+          throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+        }
+
+        if (typeof action.type === 'undefined') {
+          throw new Error('Actions may not have an undefined &quot;type&quot; property. ' + 'Have you misspelled a constant?');
+        }
+
+        if (isDispatching) {
+          throw new Error('Reducers may not dispatch actions.');
+        }
+
+        try {
+          isDispatching = true;
+          currentState = currentReducer(currentState, action);
+        } finally {
+          isDispatching = false;
+        }
+
+        var listeners = currentListeners = nextListeners;
+        for (var i = 0; i &lt; listeners.length; i++) {
+          listeners[i]();
+        }
+        return action;
+      }
+
+      return _ref2 = {
+        dispatch: dispatch,
+        subscribe: subscribe,
+        getState: getState
+    }
+</code></pre></div><h4 id="middleware"><a href="#middleware" class="header-anchor">#</a> Middleware</h4> <div class="language-// applyMiddleware 参数是一个数组，里面传入中间件 extra-class"><pre class="language-text"><code>    function applyMiddleware() {
+     //Array(5) 产生大小为5的数组
+      for (var _len = arguments.length, middlewares = Array(_len), _key = 0; _key &lt; _len; _key++) {
+        middlewares[_key] = arguments[_key];
+      }
+
+      return function (createStore) {
+        return function (reducer, preloadedState, enhancer) {
+          var store = createStore(reducer, preloadedState, enhancer);
+          var _dispatch = store.dispatch; //包装全局 store.dispatch 方法
+          var chain = []; 
+
+          var middlewareAPI = {
+            getState: store.getState,
+            dispatch: function dispatch(action) {
+              return _dispatch(action);
+            }
+          }; //将 getState dispatch 方法暴露给每一个中间件
+          chain = middlewares.map(function (middleware) {
+            return middleware(middlewareAPI); //
+          });
+          
+          _dispatch = _compose2['default'].apply(undefined, chain)(store.dispatch);
+               //compose(f, g, h) is identical to doing    * (...args) =&gt; f(g(h(...args))).
+
+          return _extends({}, store, {
+            dispatch: _dispatch //注意这里的store 还是原来的 store 但是 dispatch 是经过组合的dispatch
+          });
+        };
+      };
+    }
+</code></pre></div><h3 id="使用redux开发过程遇到的问题"><a href="#使用redux开发过程遇到的问题" class="header-anchor">#</a> 使用Redux开发过程遇到的问题</h3> <h4 id="combinereducers"><a href="#combinereducers" class="header-anchor">#</a> combineReducers</h4> <blockquote><p><code>combineReducers</code> 辅助函数的作用是，把一个由多个不同<code>reducer</code>函数作为 value 的 object，合并成一个最终的 reducer 函数，然后就可以对这个 reducer 调用 createStore。合并后的 reducer 可以调用各个子 reducer，并把它们的结果合并成一个 state 对象。state 对象的结构由传入的多个 reducer 的 key 决定。</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>combineReducers({ todos: myTodosReducer, counter: myCounterReducer })
+</code></pre></div><h4 id="connect"><a href="#connect" class="header-anchor">#</a> connect()</h4> <div class="language- extra-class"><pre class="language-text"><code>connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])()
+- mapStateToProps(state,ownsProps)省略，组件将不会监听 Redux store
+- mapDispatchToProps(dispatch,ownsProps)
+    1. 如果传递的是一个对象，那么每个定义在该对象的函数都将被当作 Redux action creator，而且这个对象会与 Redux store 绑定在一起，其中所定义的方法名将作为属性名，合并到组件的 props 中。
+    2.如果传递的是一个函数，该函数将接收一个 dispatch 函数，然后由你来决定如何返回一个对象，这个对象通过 dispatch 函数与 action creator 以某种方式绑定在一起（提示：你也许会用到 Redux 的辅助函数 bindActionCreators()）
+    
+</code></pre></div><h4 id="箭头函数"><a href="#箭头函数" class="header-anchor">#</a> 箭头函数</h4> <blockquote><p>如果箭头函数的代码块部分多于一条语句，就要使用大括号将它们括起来，并且使用return语句返回。由于大括号被解释为代码块，所以如果箭头函数直接返回一个对象，必须在对象外面加上括号。</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>var getTempItem = id =&gt; ({ id: id, name: &quot;Temp&quot; });
+</code></pre></div><h4 id="es6扩展运算符"><a href="#es6扩展运算符" class="header-anchor">#</a> ES6扩展运算符</h4> <blockquote><p>扩展运算符（...）用于取出参数对象的所有可遍历属性，拷贝到当前对象之中</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>//rest 参数 ，将参数放在数组里面，只能放在最后
+function add(...values) {
+   let sum = 0;
+
+   for (var val of values) {
+      sum += val;
+   }
+
+   return sum;
+}
+add(2, 5, 3) // 10
+
+//对象扩展
+let z = { a: 3, b: 4 };
+let n = { ...z };
+n // { a: 3, b: 4 }
+
+function add(x, y) {
+  return x + y;
+}
+
+var numbers = [4, 38];
+add(...numbers) // 42
+</code></pre></div><h3 id="传统的异步与react异步有什么区别"><a href="#传统的异步与react异步有什么区别" class="header-anchor">#</a> 传统的异步与React异步有什么区别</h3> <blockquote><p><code>React</code> 是通过状态来改变的，单项数据流，数据只能由父节点流向子节点，状态的改变会才会引起UI的变化，<code>Angular</code> 是双向数据流，任意方向的改变都会引起UI变化，数据可以从子节点流向父节点，在子类绑定<code>ng-model</code>,在父类显示
+在<code>Angular</code>里面，发送<code>Ajax</code> 请求，返回一个promise 对象，<code>ui</code> 相关的变量可以再回调里面处理， 而在再<code>React</code> 里面要想改变UI必须重新设定<code>state</code> 假如是配合Redux 必须调用dispatch(action)，然后reducer 根据 oldState，action 返回 newState 来更新UI，而像<code>React</code>这样通过发起一次dispatch，再引起UI变化都是同步，React 要做到异步需要使用中间件的概念，<code>reducer、action、state</code> 里面都不适合处理，放在<code>dispatch(action)</code>里面比较合理，一般<code>dispatch(action)</code> 里面<code>action</code>只能是一个<code>Object</code>  操作开始时，送出一个 Action，触发 State 更新为&quot;正在操作&quot;状态，View 重新渲染 操作结束后，再送出一个 Action，触发 State 更新为&quot;操作结束&quot;状态，View 再一次重新渲染</p></blockquote></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/29/2021, 7:43:54 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7320aa97.js" defer></script><script src="/assets/js/4.7c6df0b1.js" defer></script><script src="/assets/js/3.add0e5d8.js" defer></script><script src="/assets/js/25.8ae54d01.js" defer></script>
+  </body>
+</html>

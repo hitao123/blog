@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react-route 入门 | Billow&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Record the life">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92b5307c.css" as="style"><link rel="preload" href="/assets/js/app.7320aa97.js" as="script"><link rel="preload" href="/assets/js/4.7c6df0b1.js" as="script"><link rel="preload" href="/assets/js/3.add0e5d8.js" as="script"><link rel="preload" href="/assets/js/23.803d6ea0.js" as="script"><link rel="prefetch" href="/assets/js/10.490f3c5b.js"><link rel="prefetch" href="/assets/js/11.b21e81cb.js"><link rel="prefetch" href="/assets/js/12.d32284c8.js"><link rel="prefetch" href="/assets/js/13.d5ea00fb.js"><link rel="prefetch" href="/assets/js/14.85e2495e.js"><link rel="prefetch" href="/assets/js/15.2ef10be4.js"><link rel="prefetch" href="/assets/js/16.5bda7a13.js"><link rel="prefetch" href="/assets/js/17.68f50058.js"><link rel="prefetch" href="/assets/js/18.f543fdac.js"><link rel="prefetch" href="/assets/js/19.ef4a9284.js"><link rel="prefetch" href="/assets/js/20.b03079ad.js"><link rel="prefetch" href="/assets/js/21.701be381.js"><link rel="prefetch" href="/assets/js/22.b2e073a2.js"><link rel="prefetch" href="/assets/js/24.5ecaf349.js"><link rel="prefetch" href="/assets/js/25.8ae54d01.js"><link rel="prefetch" href="/assets/js/26.00aa3062.js"><link rel="prefetch" href="/assets/js/27.1070e25e.js"><link rel="prefetch" href="/assets/js/28.96d8d4d2.js"><link rel="prefetch" href="/assets/js/29.8141eba8.js"><link rel="prefetch" href="/assets/js/30.96db1157.js"><link rel="prefetch" href="/assets/js/31.f71b229b.js"><link rel="prefetch" href="/assets/js/32.252c1966.js"><link rel="prefetch" href="/assets/js/33.620d20bf.js"><link rel="prefetch" href="/assets/js/34.62369e2b.js"><link rel="prefetch" href="/assets/js/35.158f1e63.js"><link rel="prefetch" href="/assets/js/5.8ff830e7.js"><link rel="prefetch" href="/assets/js/6.59e941bb.js"><link rel="prefetch" href="/assets/js/7.07a213a7.js"><link rel="prefetch" href="/assets/js/8.8cfc374a.js"><link rel="prefetch" href="/assets/js/9.5a91c792.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.30bdab9c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92b5307c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Billow's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="react-router"><a href="#react-router" class="header-anchor">#</a> React-router</h3> <blockquote><p>今天下午花了一下午时间看了React-route，只是大概了解一下如何在项目中使用，部分组件有省略</p></blockquote> <h4 id="rendering-a-route"><a href="#rendering-a-route" class="header-anchor">#</a> Rendering a Route</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// ...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> hashHistory <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router'</span>
+<span class="token comment">//访问对应路径会加载相应的组件</span>
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Router history<span class="token operator">=</span><span class="token punctuation">{</span>hashHistory<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Repos<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>About<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div> <h4 id="navigating-with-link"><a href="#navigating-with-link" class="header-anchor">#</a> Navigating with Link</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//...</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Link <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router'</span>
+<span class="token comment">//这里link标签基本上就是 a 标签的作用</span>
+<span class="token operator">&lt;</span>ul role<span class="token operator">=</span><span class="token string">&quot;nav&quot;</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span><span class="token operator">&gt;</span>About<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span><span class="token operator">&gt;</span>Repos<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="nested-routes"><a href="#nested-routes" class="header-anchor">#</a> Nested Routes</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//优先匹配第一个</span>
+<span class="token operator">&lt;</span>App<span class="token operator">&gt;</span>       <span class="token punctuation">{</span><span class="token comment">/*  /          */</span><span class="token punctuation">}</span> <span class="token comment">//这里的是路由路径</span>
+  <span class="token operator">&lt;</span>Repos<span class="token operator">&gt;</span>   <span class="token punctuation">{</span><span class="token comment">/*  /repos     */</span><span class="token punctuation">}</span>
+    <span class="token operator">&lt;</span>Repo<span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token punctuation">{</span><span class="token comment">/*  /repos/123 */</span><span class="token punctuation">}</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Repos<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>App<span class="token operator">&gt;</span>
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>And our UI something like:
+
+         +-------------------------------------+
+         | Home Repos About                    | &lt;- App
+         +------+------------------------------+
+         |      |                              |
+Repos -&gt; | repo |  Repo 1                      |
+         |      |                              |
+         | repo |  Boxes inside boxes          |
+         |      |  inside boxes ...            | &lt;- Repo
+         | repo |                              |
+         |      |                              |
+         | repo |                              |
+         |      |                              |
+         +------+------------------------------+
+</code></pre></div><h4 id="active-links"><a href="#active-links" class="header-anchor">#</a> Active Links</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 点击之后会有激活样式，样式就是我们这里设置的</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">'red'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>About<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span> activeStyle<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">{</span> color<span class="token operator">:</span> <span class="token string">'red'</span> <span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Repos<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+
+<span class="token comment">//第二种方式</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;active&quot;</span><span class="token operator">&gt;</span>About<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;active&quot;</span><span class="token operator">&gt;</span>Repos<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+
+Nav Link Wrappers
+<span class="token comment">// modules/NavLink.js 这里就是将activeClassName放在props里面</span>
+<span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> Link <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> React<span class="token punctuation">.</span><span class="token function">createClass</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token operator">&lt;</span>Link <span class="token punctuation">{</span><span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">}</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;active&quot;</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">//使用起来更加简洁</span>
+<span class="token keyword">import</span> NavLink <span class="token keyword">from</span> <span class="token string">'./NavLink'</span>
+<span class="token comment">// ...</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span><span class="token operator">&gt;</span>About<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span><span class="token operator">&gt;</span>Repos<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="url-params"><a href="#url-params" class="header-anchor">#</a> URL Params</h4> <div class="language- extra-class"><pre class="language-text"><code>/repos/reactjs/react-router
+/repos/facebook/react
+
+/repos/:userName/:repoName
+this.props.params[userName]或者this.props.params.userName //获取参数值
+</code></pre></div><h4 id="more-nesting"><a href="#more-nesting" class="header-anchor">#</a> More Nesting</h4> <blockquote><p>First, nest the <code>Repo</code> route under the <code>Repos</code> route. Then go render
+<code>this.props.children</code> in <code>Repos</code>.</p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// index.js</span>
+<span class="token comment">// ...</span>
+<span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Repos<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/repos/:userName/:repoName&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Repo<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+
+<span class="token comment">// Repos.js</span>
+<span class="token comment">// ...</span>
+<span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>h2<span class="token operator">&gt;</span>Repos<span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>ul<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/repos/reactjs/react-router&quot;</span><span class="token operator">&gt;</span>React Router<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/repos/facebook/react&quot;</span><span class="token operator">&gt;</span>React<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>ul<span class="token operator">&gt;</span>
+  <span class="token punctuation">{</span><span class="token comment">/* will render `Repo.js` when at /repos/:userName/:repoName */</span><span class="token punctuation">}</span>
+  <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">.</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+</code></pre></div><h4 id="index-routes"><a href="#index-routes" class="header-anchor">#</a> Index Routes</h4> <blockquote><p>When we visit <code>/</code> in this app it's just our navigation and a blank page.
+We'd like to render a <code>Home</code> component there. Lets create a <code>Home</code>
+component and then talk about how to render it at <code>/</code>.这里的作用就像jsp里面存在一个默认页面<code>index.html</code></p></blockquote> <div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> Router<span class="token punctuation">,</span> Route<span class="token punctuation">,</span> hashHistory<span class="token punctuation">,</span> IndexRoute <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router'</span>
+<span class="token comment">// and the Home component</span>
+<span class="token keyword">import</span> Home <span class="token keyword">from</span> <span class="token string">'./modules/Home'</span>
+<span class="token comment">// ...</span>
+<span class="token function">render</span><span class="token punctuation">(</span><span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>Router history<span class="token operator">=</span><span class="token punctuation">{</span>hashHistory<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>App<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+
+      <span class="token punctuation">{</span><span class="token comment">/* add it here, as a child of `/` */</span><span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>IndexRoute component<span class="token operator">=</span><span class="token punctuation">{</span>Home<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span> <span class="token comment">//在这里加上一个`IndexRoute`</span>
+      <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/repos&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Repos<span class="token punctuation">}</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/repos/:userName/:repoName&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>Repo<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Route path<span class="token operator">=</span><span class="token string">&quot;/about&quot;</span> component<span class="token operator">=</span><span class="token punctuation">{</span>About<span class="token punctuation">}</span><span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>Route<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span><span class="token operator">/</span>Router<span class="token operator">&gt;</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'app'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h4 id="index-links"><a href="#index-links" class="header-anchor">#</a> Index Links</h4> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// App.js</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> IndexLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-router'</span>
+
+<span class="token comment">// ...</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>IndexLink to<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;active&quot;</span><span class="token operator">&gt;</span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>IndexLink<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+<span class="token comment">//第二种方式</span>
+<span class="token operator">&lt;</span>Link to<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> activeClassName<span class="token operator">=</span><span class="token string">&quot;active&quot;</span> onlyActiveOnIndex<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>Link<span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span>li<span class="token operator">&gt;</span><span class="token operator">&lt;</span>NavLink to<span class="token operator">=</span><span class="token string">&quot;/&quot;</span> onlyActiveOnIndex<span class="token operator">=</span><span class="token punctuation">{</span><span class="token boolean">true</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>Home<span class="token operator">&lt;</span><span class="token operator">/</span>NavLink<span class="token operator">&gt;</span><span class="token operator">&lt;</span><span class="token operator">/</span>li<span class="token operator">&gt;</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/29/2021, 7:43:54 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7320aa97.js" defer></script><script src="/assets/js/4.7c6df0b1.js" defer></script><script src="/assets/js/3.add0e5d8.js" defer></script><script src="/assets/js/23.803d6ea0.js" defer></script>
+  </body>
+</html>

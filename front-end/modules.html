@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AMD、CMD、UMD、CommonJS 认识 | Billow&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Record the life">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.92b5307c.css" as="style"><link rel="preload" href="/assets/js/app.7320aa97.js" as="script"><link rel="preload" href="/assets/js/4.7c6df0b1.js" as="script"><link rel="preload" href="/assets/js/3.add0e5d8.js" as="script"><link rel="preload" href="/assets/js/22.b2e073a2.js" as="script"><link rel="prefetch" href="/assets/js/10.490f3c5b.js"><link rel="prefetch" href="/assets/js/11.b21e81cb.js"><link rel="prefetch" href="/assets/js/12.d32284c8.js"><link rel="prefetch" href="/assets/js/13.d5ea00fb.js"><link rel="prefetch" href="/assets/js/14.85e2495e.js"><link rel="prefetch" href="/assets/js/15.2ef10be4.js"><link rel="prefetch" href="/assets/js/16.5bda7a13.js"><link rel="prefetch" href="/assets/js/17.68f50058.js"><link rel="prefetch" href="/assets/js/18.f543fdac.js"><link rel="prefetch" href="/assets/js/19.ef4a9284.js"><link rel="prefetch" href="/assets/js/20.b03079ad.js"><link rel="prefetch" href="/assets/js/21.701be381.js"><link rel="prefetch" href="/assets/js/23.803d6ea0.js"><link rel="prefetch" href="/assets/js/24.5ecaf349.js"><link rel="prefetch" href="/assets/js/25.8ae54d01.js"><link rel="prefetch" href="/assets/js/26.00aa3062.js"><link rel="prefetch" href="/assets/js/27.1070e25e.js"><link rel="prefetch" href="/assets/js/28.96d8d4d2.js"><link rel="prefetch" href="/assets/js/29.8141eba8.js"><link rel="prefetch" href="/assets/js/30.96db1157.js"><link rel="prefetch" href="/assets/js/31.f71b229b.js"><link rel="prefetch" href="/assets/js/32.252c1966.js"><link rel="prefetch" href="/assets/js/33.620d20bf.js"><link rel="prefetch" href="/assets/js/34.62369e2b.js"><link rel="prefetch" href="/assets/js/35.158f1e63.js"><link rel="prefetch" href="/assets/js/5.8ff830e7.js"><link rel="prefetch" href="/assets/js/6.59e941bb.js"><link rel="prefetch" href="/assets/js/7.07a213a7.js"><link rel="prefetch" href="/assets/js/8.8cfc374a.js"><link rel="prefetch" href="/assets/js/9.5a91c792.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.30bdab9c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.92b5307c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Billow's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>AMD(异步模块定义)、CMD(通用模块定义)、CommonJS()
+这些东西都是js规范,前两个是为了实现浏览器端模块化开发。</p></blockquote> <table><thead><tr><th style="text-align:center;">服务器端JS</th> <th style="text-align:center;">浏览器端JS</th></tr></thead> <tbody><tr><td style="text-align:center;">相同的代码需要多次执行</td> <td style="text-align:center;">代码需要从一个服务器端分发到多个客户端执行</td></tr> <tr><td style="text-align:center;">CPU和内存资源是瓶颈</td> <td style="text-align:center;">带宽是瓶颈</td></tr> <tr><td style="text-align:center;">加载时从磁盘中加载</td> <td style="text-align:center;">加载时需要通过网络加载</td></tr></tbody></table> <h3 id="amd-asynchronous-module-definition-异步加载-浏览器端"><a href="#amd-asynchronous-module-definition-异步加载-浏览器端" class="header-anchor">#</a> AMD(Asynchronous Module Definition，异步加载，浏览器端)</h3> <blockquote><p><em>RequireJS</em>实现了<code>AMD</code>规范出现的原因，同步等待，假如js文件很大，会造成阻塞。
+它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。</p></blockquote> <p>```定义方法，有点类似  <code>angular</code>的依赖注入
+define([&quot;require&quot;, &quot;exports&quot;, &quot;./mod&quot;], function (require, exports, mod_1) {
+exports.t = mod_1.something + 1;
+});</p> <div class="language- extra-class"><pre class="language-text"><code>
+### CommonJS（适用于服务器端，同步加载）
+
+&gt;CommonJS定义的模块分为:{模块引用(require)} {模块定义(exports)} {模块标识(module)} 这里主要是`nodejs` 使用
+
+```这里引入node里面的文件模块和http模块
+var fs = require('fs');
+var http = require('http');
+//这里将example.js 的方法导出，以后再其他文件里面只需要require('example.js')即可
+module.exports = {init: function(){}}
+exports.func = function(){//dosomething;}
+
+// var init = require('./index.js')
+</code></pre></div><h3 id="cmd-lazyload"><a href="#cmd-lazyload" class="header-anchor">#</a> CMD(lazyLoad)</h3> <blockquote><p><em>SeaJS</em>实现了<code>CMD</code>规范 <a href="https://www.zhihu.com/question/20351507/answer/14859415" target="_blank" rel="noopener noreferrer">SeaJS<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <ol><li>对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。不过 RequireJS 从 2.0 开始，也改成可以延迟执行（根据写法不同，处理方式不同）。CMD 推崇 as lazy as possible.</li> <li>CMD 推崇依赖就近，AMD 推崇依赖前置。看代码：</li> <li>AMD 的 API 默认是一个当多个用，CMD 的 API 严格区分，推崇职责单一。比如 AMD 里，require 分全局 require 和局部 require，都叫 require。CMD 里，没有全局 require，而是根据模块系统的完备性，提供<code>seajs.use</code> 来实现模块系统的加载启动。CMD 里，每个 API 都简单纯粹</li></ol> <div class="language- extra-class"><pre class="language-text"><code>// CMD
+define(function(require, exports, module) {
+var a = require('./a')
+a.doSomething()
+// 此处略去 100 行
+var b = require('./b') // 依赖可以就近书写
+b.doSomething()
+// ... 
+})
+
+// AMD 默认推荐的是
+define(['./a', './b'], function(a, b) { // 依赖必须一开始就写好
+a.doSomething()
+// 此处略去 100 行
+b.doSomething()
+...
+}) 
+</code></pre></div><h3 id="umd-universal-module-definition"><a href="#umd-universal-module-definition" class="header-anchor">#</a> UMD (Universal Module Definition)</h3> <blockquote><p>这种写法经常在Jquery库看到，之前一直看不懂</p></blockquote> <div class="language- extra-class"><pre class="language-text"><code>    (function (factory) {
+        if (typeof module === &quot;object&quot; &amp;&amp; typeof module.exports === &quot;object&quot;) {
+            let v = factory(require, exports); 
+            if (v !== undefined) module.exports = v;
+        } else if (typeof define === &quot;function&quot; &amp;&amp; define.amd) {
+            define([&quot;require&quot;, &quot;exports&quot;, &quot;./mod&quot;], factory);
+        } else {
+            window.factory = factory();
+        }
+    })(function (require, exports) {
+        let mod_1 = require(&quot;./mod&quot;);
+        exports.t = mod_1.something + 1;
+    });
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/29/2021, 7:43:54 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.7320aa97.js" defer></script><script src="/assets/js/4.7c6df0b1.js" defer></script><script src="/assets/js/3.add0e5d8.js" defer></script><script src="/assets/js/22.b2e073a2.js" defer></script>
+  </body>
+</html>
