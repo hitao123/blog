@@ -33,7 +33,8 @@ module.exports = {
                   '2017/summary/',
                   '2018/summary/',
                   '2019/summary/',
-                  '2020/noCov/'
+                  '2020/noCov/',
+                  '2020/summary/'
                 ]
             }
           ]

@@ -20,6 +20,7 @@
       <hr>
       <ul>
         <li><a href="https://hitao123.github.io/hui/" target="_blank">hui 移动端组件库</a></li>
+        <li><a href="https://github.com/hitao123/vscode-plugin-weibo-hot" target="_blank">vscode 知乎微博热搜插件</a></li>
       </ul>
     </main>
     <aside class="aside-page">
