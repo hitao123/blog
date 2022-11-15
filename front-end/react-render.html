@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>react rerender 优化思路 | Billow&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    <link rel="icon" href="/logo.png">
+    <meta name="description" content="Record the life">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.bafaef05.css" as="style"><link rel="preload" href="/assets/js/app.a7edc6a8.js" as="script"><link rel="preload" href="/assets/js/4.85b08fc7.js" as="script"><link rel="preload" href="/assets/js/3.f425cb67.js" as="script"><link rel="preload" href="/assets/js/24.413aae9f.js" as="script"><link rel="prefetch" href="/assets/js/10.9b0a0e83.js"><link rel="prefetch" href="/assets/js/11.3cca0e75.js"><link rel="prefetch" href="/assets/js/12.ca09a0e3.js"><link rel="prefetch" href="/assets/js/13.424310e5.js"><link rel="prefetch" href="/assets/js/14.4779c2e2.js"><link rel="prefetch" href="/assets/js/15.a18307c3.js"><link rel="prefetch" href="/assets/js/16.287dca83.js"><link rel="prefetch" href="/assets/js/17.127affbf.js"><link rel="prefetch" href="/assets/js/18.d1f1c07c.js"><link rel="prefetch" href="/assets/js/19.f12d035d.js"><link rel="prefetch" href="/assets/js/20.a09cb533.js"><link rel="prefetch" href="/assets/js/21.7677f817.js"><link rel="prefetch" href="/assets/js/22.1965d2de.js"><link rel="prefetch" href="/assets/js/23.1e2b82ee.js"><link rel="prefetch" href="/assets/js/25.afc6cc1c.js"><link rel="prefetch" href="/assets/js/26.51b785f9.js"><link rel="prefetch" href="/assets/js/27.ee9e13e1.js"><link rel="prefetch" href="/assets/js/28.258ab6df.js"><link rel="prefetch" href="/assets/js/29.ea925d47.js"><link rel="prefetch" href="/assets/js/30.65b46a88.js"><link rel="prefetch" href="/assets/js/31.a0dec93b.js"><link rel="prefetch" href="/assets/js/32.42b479e7.js"><link rel="prefetch" href="/assets/js/33.7f83eaf7.js"><link rel="prefetch" href="/assets/js/34.f10cc3e6.js"><link rel="prefetch" href="/assets/js/35.664b436d.js"><link rel="prefetch" href="/assets/js/36.f7ac03fc.js"><link rel="prefetch" href="/assets/js/37.5f9651c0.js"><link rel="prefetch" href="/assets/js/5.9ae89366.js"><link rel="prefetch" href="/assets/js/6.ce9c2305.js"><link rel="prefetch" href="/assets/js/7.d048b1c6.js"><link rel="prefetch" href="/assets/js/8.37b2835e.js"><link rel="prefetch" href="/assets/js/9.2c9b979c.js"><link rel="prefetch" href="/assets/js/vendors~flowchart.4a98c388.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.bafaef05.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Billow's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/archive/" class="nav-link">
+  存档
+</a></div><div class="nav-item"><a href="/front-end/" class="nav-link router-link-active">
+  前端
+</a></div><div class="nav-item"><a href="/back-end/" class="nav-link">
+  后端
+</a></div><div class="nav-item"><a href="/other/" class="nav-link">
+  其他技术
+</a></div><div class="nav-item"><a href="/notebook/" class="nav-link">
+  笔记
+</a></div><div class="nav-item"><a href="/reading/" class="nav-link">
+  读书笔记
+</a></div><div class="nav-item"><a href="/life/" class="nav-link">
+  生活
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  关于我
+</a></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><blockquote><p>平时在开发过程中很少关注到 react 性能优化的部分，周末看了一下相关的文章，了解了一些常用的做法，做一个记录，以方便后续使用, 我们知道一个组件只有在 state props 发生改变的时候，才有可能发生 rerender, 下面我们一起来探讨一下不同的情形，也顺便了解一下 memo useCallback 的使用</p></blockquote> <h2 id="常规使用"><a href="#常规使用" class="header-anchor">#</a> 常规使用</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 每次点击按钮都会 render</span>
+<span class="token keyword">function</span> <span class="token function">Counter</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;Counter render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>button
+          onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">}</span>
+        <span class="token operator">&gt;</span>
+          add
+        <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 值类型，点击这里是不会重新渲染的， 原因 ，更新 state 的时候，会有一个新老 state 的比较，用的是 Object.is 进行比较，如果为 true 则直接返回不更新</span>
+<span class="token keyword">function</span> <span class="token function">Counter</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;counter render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">num</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">clickHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    count<span class="token punctuation">.</span>num<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token function">addCount</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>count<span class="token punctuation">.</span>num<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button onClick<span class="token operator">=</span><span class="token punctuation">{</span>clickHandler<span class="token punctuation">}</span><span class="token operator">&gt;</span>add<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="父组件更新引起子组件-re-render-情形一"><a href="#父组件更新引起子组件-re-render-情形一" class="header-anchor">#</a> 父组件更新引起子组件 re-render 情形一</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">//  Hello 组件作为 子组件，虽然没有更新，但是父组件每次更新 引起了 Hello 组件更新，在这种业务场景，我们可以做一些优化</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">Hello</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>hello <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;app render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        add
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="优化一"><a href="#优化一" class="header-anchor">#</a> 优化一</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 将影响的部分单独拆成一个组件，平行放置</span>
+<span class="token keyword">const</span> <span class="token function-variable function">Hello</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>hello <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;app render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+        <span class="token operator">&lt;</span>Counter <span class="token operator">/</span><span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="优化二"><a href="#优化二" class="header-anchor">#</a> 优化二</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 将不需要 re-render 的部分以 children 的方式渲染</span>
+<span class="token comment">// App 组件预留 children 位</span>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;app render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+        <span class="token punctuation">{</span>children<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        add
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 使用</span>
+<span class="token operator">&lt;</span>App<span class="token operator">&gt;</span>
+  <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>App<span class="token operator">&gt;</span>
+</code></pre></div><h3 id="优化三"><a href="#优化三" class="header-anchor">#</a> 优化三</h3> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// 使用 React.memo </span>
+
+<span class="token keyword">const</span> Hello <span class="token operator">=</span> React<span class="token punctuation">.</span><span class="token function">memo</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token operator">&lt;</span>div<span class="token operator">&gt;</span>hello <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;app render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;app&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        add
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div><h2 id="父组件更新引起子组件-re-render-情形二"><a href="#父组件更新引起子组件-re-render-情形二" class="header-anchor">#</a> 父组件更新引起子组件 re-render 情形二</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// Hello 组件新增一个 onClick method， 这样由于每次每次点击计数，都会重新定义 clickHandler 处理函数， 所以这里 Hello 组件又被重新渲染了，所以很多时候我们在 Hello 组件写的 memo 毫无意义</span>
+
+<span class="token keyword">const</span> Hello <span class="token operator">=</span> <span class="token function">memo</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> name<span class="token punctuation">,</span> onClick <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span><span class="token operator">&lt;</span>div onClick<span class="token operator">=</span><span class="token punctuation">{</span>onClick<span class="token punctuation">}</span><span class="token operator">&gt;</span>hello <span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;counter render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 新增处理函数</span>
+  <span class="token keyword">const</span> <span class="token function-variable function">clickHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello click&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>clickHandler<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        add
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h3 id="方案一-usecallback"><a href="#方案一-usecallback" class="header-anchor">#</a> 方案一 (useCallback)</h3> <div class="language-js extra-class"><pre class="language-js"><code>
+<span class="token comment">// 使用 useCallback 包裹一下 onClick 方法, 但是当我们想输出 父组件的 count 时候，发现是不更新的，这个时候 使用 useRef &amp; useEffect 可以解决我们的问题</span>
+
+<span class="token keyword">const</span> clickHandler <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;hello click&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+<span class="token comment">// 使用 useRef 来更新 count，使用 useEffect 来更新 countRef， 这个是推荐在业务中使用的</span>
+<span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> children <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;counter render&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> <span class="token punctuation">[</span>count<span class="token punctuation">,</span> addCount<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">useState</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 1、创建一个 countRef </span>
+  <span class="token keyword">const</span> countRef <span class="token operator">=</span> <span class="token function">useRef</span><span class="token punctuation">(</span>count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 2、依赖改成 countRef</span>
+  <span class="token comment">// 浅对比 countRef 时，将不会引起 callback 函数更新</span>
+  <span class="token comment">// callback 函数又中可以读取到 countRef.current 值，即 count 的最新值</span>
+  <span class="token keyword">const</span> clickHandler <span class="token operator">=</span> <span class="token function">useCallback</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;count: &quot;</span><span class="token punctuation">,</span> countRef<span class="token punctuation">.</span>current<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>countRef<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  
+  <span class="token comment">// 3、当 count 更新时，更新 countRef 的值</span>
+  <span class="token function">useEffect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+      countRef<span class="token punctuation">.</span>current <span class="token operator">=</span> count<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter&quot;</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>Hello name<span class="token operator">=</span><span class="token string">&quot;react&quot;</span> onClick<span class="token operator">=</span><span class="token punctuation">{</span>clickHandler<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token string">&quot;counter-num&quot;</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>count<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+      <span class="token operator">&lt;</span>button
+        onClick<span class="token operator">=</span><span class="token punctuation">{</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token function">addCount</span><span class="token punctuation">(</span>count <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">}</span>
+      <span class="token operator">&gt;</span>
+        add
+      <span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">&gt;</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">11/15/2022, 2:38:31 AM</span></div></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.a7edc6a8.js" defer></script><script src="/assets/js/4.85b08fc7.js" defer></script><script src="/assets/js/3.f425cb67.js" defer></script><script src="/assets/js/24.413aae9f.js" defer></script>
+  </body>
+</html>
